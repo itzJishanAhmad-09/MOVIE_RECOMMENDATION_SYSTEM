@@ -17,8 +17,8 @@ def prepare_model():
         return movies, similarity
 
     # LOAD LOCAL FILES (NO DOWNLOAD)
-    movies = pd.read_csv("tmdb_5000_movies.csv")
-    credits = pd.read_csv("tmdb_5000_credits.csv")
+    movies = pd.read_csv("tmdb_5000_movies.csv.zip")
+    credits = pd.read_csv("tmdb_5000_credits.csv.zip")
 
     movies = movies.merge(credits, on="title")
     movies = movies[['movie_id','title','overview','genres','keywords','cast','crew']]
@@ -88,3 +88,4 @@ def recommend(movie):
 if st.button("Recommend"):
     for movie in recommend(selected_movie):
         st.write("👉", movie)
+
