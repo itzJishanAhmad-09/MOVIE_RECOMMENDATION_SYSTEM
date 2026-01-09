@@ -17,8 +17,8 @@ def prepare_model():
         return movies, similarity
 
     # LOAD LOCAL FILES (NO DOWNLOAD)
-   movies = pd.read_csv("tmdb_5000_movies.csv.zip", compression="zip")
-   credits = pd.read_csv("tmdb_5000_credits.csv.zip", compression="zip")
+    movies = pd.read_csv("tmdb_5000_movies.csv.zip", compression="zip")
+    credits = pd.read_csv("tmdb_5000_credits.csv.zip", compression="zip")
 
 
     movies = movies.merge(credits, on="title")
